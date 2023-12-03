@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/operations';
 import { PrivateRoute } from './PrivateRoute';
+import { RedirectIndex } from './RedirectIndex';
 import { RefreshMessage } from './RefreshMessage/RefreshMessage';
 import { RestrictedRoute } from './RestrictedRoute';
 
