@@ -23,7 +23,7 @@ export const App = () => {
   ) : (
     <>
       <Routes>
-        <Route path="/" component={<RedirectIndex />} />
+        <Route path="/" element={<RedirectIndex />} />
         <Route
           path="/contacts"
           element={
