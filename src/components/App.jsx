@@ -4,7 +4,7 @@ import { Login } from 'pages/Login';
 import { Registration } from 'pages/Registration';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/operations';
 import { PrivateRoute } from './PrivateRoute';
 import { RefreshMessage } from './RefreshMessage/RefreshMessage';
@@ -21,10 +21,8 @@ export const App = () => {
     <RefreshMessage />
   ) : (
     <>
-      <Link to="/contacts">HOME</Link>
-      <Link to="/registration">REG</Link>
-      <Link to="/login">LOGIN</Link>
       <Routes>
+        <Route path="/" component={<RedirectIndex />} />
         <Route
           path="/contacts"
           element={
