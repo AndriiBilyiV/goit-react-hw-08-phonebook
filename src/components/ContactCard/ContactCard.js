@@ -6,11 +6,11 @@ import { DeleteIcon, FaceIcon } from './CardIcons';
 
 export const ContactCard = ({ item }) => {
   const dispach = useDispatch();
-  const { name, id, tel } = item;
+  const { name, id, number } = item;
   return (
     <CardWrapper>
       <FaceIcon />
-      {name}: {tel}
+      {name}: {number}
       <Button onClick={() => dispach(deleteContact(id))}>
         <DeleteIcon />
       </Button>

@@ -5,6 +5,7 @@ export const theme = {
     mediumRedViolet: '#9C3587',
     cerise: '#E53F71',
     sandyBrown: '#F89F5B',
+    white: 'white',
   },
   spasing: value => `${value * 4}px`,
 };

@@ -10,10 +10,12 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
-
+const phoneRegExp = /^[\d -]{5,15}$/;
 const cardSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too short').required('This field is required'),
-  tel: Yup.number().required('This field is required'),
+  number: Yup.string()
+    .matches(phoneRegExp, 'Phone number is not valid')
+    .required('This field is required'),
 });
 
 export const InputForm = () => {
@@ -40,7 +42,7 @@ export const InputForm = () => {
       <Formik
         initialValues={{
           name: '',
-          tel: '',
+          number: '',
         }}
         validationSchema={cardSchema}
         onSubmit={(values, actions) => {
@@ -58,8 +60,8 @@ export const InputForm = () => {
           </FieldTitle>
           <FieldTitle>
             Number
-            <Input type="number" name="tel" />
-            <ValidError name="tel" component="div" />
+            <Input name="number" />
+            <ValidError name="number" component="div" />
           </FieldTitle>
           <Submit type="submit">Add contact</Submit>
         </StyledForm>
